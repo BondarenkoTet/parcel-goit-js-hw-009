@@ -17,12 +17,15 @@ let countDownDate = "";
 
 function startTimer() {
   startBtn.disabled = true;
+
   setInterval(() => {
-    console.log(countDownDate);
-    let dateDiff = countDownDate - Date.now();
+  let dateDiff = countDownDate - Date.now();
+
+  if(dateDiff > 0) 
     updateTimerUi(convertMs(dateDiff));
   }, 1000);
 }
+
 
 const options = {
   enableTime: true,
@@ -43,7 +46,6 @@ const options = {
 };
 
 const calendar = flatpickr(input, options);
-//console.log(calendar);
 
 function convertMs(ms) {
   const second = 1000;
@@ -65,11 +67,6 @@ function updateTimerUi({ days, hours, minutes, seconds }) {
   spanMinutes.textContent = addLeadingZero(minutes);
   spanSeconds.textContent = addLeadingZero(seconds);
 }
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000));
-
-//------Форматування часу----
 
 function addLeadingZero(value) {
   return String(value).padStart(2, 0);
