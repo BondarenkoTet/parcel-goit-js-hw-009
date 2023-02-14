@@ -15,17 +15,17 @@ startBtn.addEventListener('click', startTimer);
 
 let countDownDate = "";
 
-function startTimer() {
-  startBtn.disabled = true;
+// function startTimer() {
+//   startBtn.disabled = true;
 
-  setInterval(() => {
-  let dateDiff = countDownDate - Date.now();
+//   let timerId = setInterval(() => 
+//   let dateDiff = countDownDate - Date.now(),
 
-  if(dateDiff > 0) 
-    updateTimerUi(convertMs(dateDiff));
-  }, 1000);
-}
-
+//   if(dateDiff > 0) {
+//     updateTimerUi(convertMs(dateDiff));
+//   }, 1000)
+//  else  {clearInterval(timerId)}
+// }
 
 const options = {
   enableTime: true,
